@@ -3,12 +3,12 @@
     <channel>
         <title>AirPrint Relay</title>
         <item>
-            <title>0.1.02</title>
-            <pubDate>Tue, 11 Aug 2026 12:50:55 +1200</pubDate>
-            <sparkle:version>2026081113</sparkle:version>
-            <sparkle:shortVersionString>0.1.02</sparkle:shortVersionString>
+            <title>0.1.03</title>
+            <pubDate>Tue, 11 Aug 2026 13:08:20 +1200</pubDate>
+            <sparkle:version>2026081114</sparkle:version>
+            <sparkle:shortVersionString>0.1.03</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://maxhewett.github.io/AirPrint-Relay/AirPrint%20Relay-0.1.02.zip" length="3555937" type="application/octet-stream" sparkle:edSignature="FTyIhtQ8yzpPZespg/XF6JUZjq6Hw5zXC5RM4khQtWMHinl2EHtMhHSJAQTNayft9/ndnDFIBFMHWW0rpX+hDw=="/>
+            <enclosure url="https://maxhewett.github.io/AirPrint-Relay/AirPrint%20Relay-0.1.03.zip" length="3566279" type="application/octet-stream" sparkle:edSignature="jj1x/sBKyJyIiwE6AgeYR9qhEQwDT1c3n2K35rGcGchHJKGpQPRQvDMJUUJqDgszyWb8UgyhunDFIzNyvjGYBQ=="/>
         </item>
     </channel>
 </rss>
