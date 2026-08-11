@@ -21,6 +21,7 @@ The app discovers local queues through CUPS tools, advertises its own IPP listen
 - Includes a shortcut for easy iOS Safari image printing
 
 ## Screenshots
+<img width="1072" height="752" alt="image" src="https://github.com/user-attachments/assets/b752b107-f7f7-415c-9611-9fd54106f4a5" />
 
 
 ## Server Setup
