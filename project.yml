@@ -1,0 +1,25 @@
+name: AirPrint Relay
+options:
+  bundleIdPrefix: com.max
+  deploymentTarget:
+    macOS: "13.0"
+targets:
+  AirPrint Relay:
+    type: application
+    platform: macOS
+    sources:
+      - path: AirPrintRelay
+      - path: AirPrintRelay.icon
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.maxhewett.AirPrint-Relay
+        PRODUCT_NAME: AirPrint Relay
+        INFOPLIST_FILE: AirPrintRelay/Info.plist
+        SWIFT_VERSION: 5.0
+        CURRENT_PROJECT_VERSION: 1
+        MARKETING_VERSION: 0.1.0
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_STYLE: Automatic
+        GENERATE_INFOPLIST_FILE: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon

@@ -1,0 +1,376 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C9F659AE1DDFC08773CD096 /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72307B7E24BA0925B1987747 /* Printer.swift */; };
+		119B1B9BB6F24B57B39B1934 /* AppLogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611CEB9A4234A04AA1771F71 /* AppLogStore.swift */; };
+		20A839EB615C4B8E9BB1743A /* CUPSJobSubmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C41837F65964DFB8234932B /* CUPSJobSubmitter.swift */; };
+		2A141D15BA21606E480DCE6E /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6B038DAC1999F3BD6011C /* AppModel.swift */; };
+		2CCD07872A640B6A5101E81E /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C6F461B2A1FB25DD11E02D /* Shell.swift */; };
+		43E5DF8C07C14F95B04C24EA /* IPPMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F4BBA013C34BF2B901378C /* IPPMessage.swift */; };
+		4F09F018B2A143D596929AC7 /* AirPrintRelay.icon in Resources */ = {isa = PBXBuildFile; fileRef = 9E1C803D27F0439CBA7A2389 /* AirPrintRelay.icon */; };
+		51FC81F450BEDEF24A5B21B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB105ECFA428053E989E05 /* ContentView.swift */; };
+		6DA92C4E5E87C45B39DDFB54 /* AirPrintRelayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BFD09D3F2EAD33749BFB6F /* AirPrintRelayApp.swift */; };
+		7B10F022D20B4AB88227A57C /* IPPRelayServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8AC6AFD324B34A89416D9 /* IPPRelayServer.swift */; };
+		8F78B919D849E9341D90E009 /* AirPrintProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5335A3930FEE78CAC46F1362 /* AirPrintProfile.swift */; };
+		90E005095C40B9C2B7519358 /* AirPrintAdvertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D98CB9049390152A687DA68 /* AirPrintAdvertiser.swift */; };
+		B1CF540EBCE4B6461F79EF8E /* CUPSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2D34790B9210BFA7EF940D /* CUPSService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		19BFD09D3F2EAD33749BFB6F /* AirPrintRelayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPrintRelayApp.swift; sourceTree = "<group>"; };
+		1C8335A798538C3820B984DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		29E8AC6AFD324B34A89416D9 /* IPPRelayServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPPRelayServer.swift; sourceTree = "<group>"; };
+		3C41837F65964DFB8234932B /* CUPSJobSubmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUPSJobSubmitter.swift; sourceTree = "<group>"; };
+		5335A3930FEE78CAC46F1362 /* AirPrintProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPrintProfile.swift; sourceTree = "<group>"; };
+		54C6F461B2A1FB25DD11E02D /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
+		5A2D34790B9210BFA7EF940D /* CUPSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUPSService.swift; sourceTree = "<group>"; };
+		5D98CB9049390152A687DA68 /* AirPrintAdvertiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPrintAdvertiser.swift; sourceTree = "<group>"; };
+		611CEB9A4234A04AA1771F71 /* AppLogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogStore.swift; sourceTree = "<group>"; };
+		67E6B038DAC1999F3BD6011C /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		72307B7E24BA0925B1987747 /* Printer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
+		734030235EFBB902CAD6CCCD /* AirPrint Relay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AirPrint Relay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AFB105ECFA428053E989E05 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9E1C803D27F0439CBA7A2389 /* AirPrintRelay.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AirPrintRelay.icon; sourceTree = "<group>"; };
+		D1F4BBA013C34BF2B901378C /* IPPMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPPMessage.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		14CD5630AF43F9C52204A65C = {
+			isa = PBXGroup;
+			children = (
+				9E1C803D27F0439CBA7A2389 /* AirPrintRelay.icon */,
+				A07F315CBD85963334985171 /* AirPrintRelay */,
+				5EFB8EEE99146B77EA730E5A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A2D821874A901AD4073AE19 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5D98CB9049390152A687DA68 /* AirPrintAdvertiser.swift */,
+				5335A3930FEE78CAC46F1362 /* AirPrintProfile.swift */,
+				611CEB9A4234A04AA1771F71 /* AppLogStore.swift */,
+				67E6B038DAC1999F3BD6011C /* AppModel.swift */,
+				3C41837F65964DFB8234932B /* CUPSJobSubmitter.swift */,
+				5A2D34790B9210BFA7EF940D /* CUPSService.swift */,
+				D1F4BBA013C34BF2B901378C /* IPPMessage.swift */,
+				29E8AC6AFD324B34A89416D9 /* IPPRelayServer.swift */,
+				54C6F461B2A1FB25DD11E02D /* Shell.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5EFB8EEE99146B77EA730E5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				734030235EFBB902CAD6CCCD /* AirPrint Relay.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A07F315CBD85963334985171 /* AirPrintRelay */ = {
+			isa = PBXGroup;
+			children = (
+				19BFD09D3F2EAD33749BFB6F /* AirPrintRelayApp.swift */,
+				9AFB105ECFA428053E989E05 /* ContentView.swift */,
+				1C8335A798538C3820B984DC /* Info.plist */,
+				B87302D263E40D47735302AD /* Models */,
+				4A2D821874A901AD4073AE19 /* Services */,
+			);
+			path = AirPrintRelay;
+			sourceTree = "<group>";
+		};
+		B87302D263E40D47735302AD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				72307B7E24BA0925B1987747 /* Printer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DAA64036719A1F1D7AA8FB5 /* AirPrint Relay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21021E4A728D646B89394C37 /* Build configuration list for PBXNativeTarget "AirPrint Relay" */;
+			buildPhases = (
+				FD2FBB13C34F5F66AB20ABF0 /* Sources */,
+				98492AF628674526A15B84FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AirPrint Relay";
+			packageProductDependencies = (
+			);
+			productName = "AirPrint Relay";
+			productReference = 734030235EFBB902CAD6CCCD /* AirPrint Relay.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D062BE0FB2D3BC2834E8941 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					8DAA64036719A1F1D7AA8FB5 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5CFBB0E75845B37F2E74180F /* Build configuration list for PBXProject "AirPrint Relay" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 14CD5630AF43F9C52204A65C;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 5EFB8EEE99146B77EA730E5A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DAA64036719A1F1D7AA8FB5 /* AirPrint Relay */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		98492AF628674526A15B84FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F09F018B2A143D596929AC7 /* AirPrintRelay.icon in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD2FBB13C34F5F66AB20ABF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90E005095C40B9C2B7519358 /* AirPrintAdvertiser.swift in Sources */,
+				8F78B919D849E9341D90E009 /* AirPrintProfile.swift in Sources */,
+				119B1B9BB6F24B57B39B1934 /* AppLogStore.swift in Sources */,
+				6DA92C4E5E87C45B39DDFB54 /* AirPrintRelayApp.swift in Sources */,
+				2A141D15BA21606E480DCE6E /* AppModel.swift in Sources */,
+				B1CF540EBCE4B6461F79EF8E /* CUPSService.swift in Sources */,
+				51FC81F450BEDEF24A5B21B4 /* ContentView.swift in Sources */,
+				20A839EB615C4B8E9BB1743A /* CUPSJobSubmitter.swift in Sources */,
+				7B10F022D20B4AB88227A57C /* IPPRelayServer.swift in Sources */,
+				43E5DF8C07C14F95B04C24EA /* IPPMessage.swift in Sources */,
+				0C9F659AE1DDFC08773CD096 /* Printer.swift in Sources */,
+				2CCD07872A640B6A5101E81E /* Shell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		069593C70F3D23B6EF2A06C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		270E8C6539C50948A6603577 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AirPrintRelay;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FHXMYC956U;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AirPrintRelay/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "AirPrint Relay";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maxhewett.AirPrint-Relay";
+				PRODUCT_NAME = "AirPrint Relay";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6434AEB88479CA55E3BB75F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		EEEAFCB064B86241845624D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AirPrintRelay;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FHXMYC956U;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AirPrintRelay/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "AirPrint Relay";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maxhewett.AirPrint-Relay";
+				PRODUCT_NAME = "AirPrint Relay";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21021E4A728D646B89394C37 /* Build configuration list for PBXNativeTarget "AirPrint Relay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				270E8C6539C50948A6603577 /* Debug */,
+				EEEAFCB064B86241845624D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5CFBB0E75845B37F2E74180F /* Build configuration list for PBXProject "AirPrint Relay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				069593C70F3D23B6EF2A06C2 /* Debug */,
+				6434AEB88479CA55E3BB75F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7D062BE0FB2D3BC2834E8941 /* Project object */;
+}
