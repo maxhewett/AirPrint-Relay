@@ -13,7 +13,7 @@
 		2A141D15BA21606E480DCE6E /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6B038DAC1999F3BD6011C /* AppModel.swift */; };
 		2CCD07872A640B6A5101E81E /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C6F461B2A1FB25DD11E02D /* Shell.swift */; };
 		43E5DF8C07C14F95B04C24EA /* IPPMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F4BBA013C34BF2B901378C /* IPPMessage.swift */; };
-		4F09F018B2A143D596929AC7 /* AirPrintRelay.icon in Resources */ = {isa = PBXBuildFile; fileRef = 9E1C803D27F0439CBA7A2389 /* AirPrintRelay.icon */; };
+		4F09F018B2A143D596929AC7 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 9E1C803D27F0439CBA7A2389 /* AppIcon.icon */; };
 		51FC81F450BEDEF24A5B21B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB105ECFA428053E989E05 /* ContentView.swift */; };
 		6DA92C4E5E87C45B39DDFB54 /* AirPrintRelayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BFD09D3F2EAD33749BFB6F /* AirPrintRelayApp.swift */; };
 		7B10F022D20B4AB88227A57C /* IPPRelayServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8AC6AFD324B34A89416D9 /* IPPRelayServer.swift */; };
@@ -38,7 +38,7 @@
 		72307B7E24BA0925B1987747 /* Printer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
 		734030235EFBB902CAD6CCCD /* AirPrint Relay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AirPrint Relay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AFB105ECFA428053E989E05 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		9E1C803D27F0439CBA7A2389 /* AirPrintRelay.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AirPrintRelay.icon; sourceTree = "<group>"; };
+		9E1C803D27F0439CBA7A2389 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		A1B2C3D4E5F60718293A4B5C /* AppUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdater.swift; sourceTree = "<group>"; };
 		D1F4BBA013C34BF2B901378C /* IPPMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPPMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,7 +58,7 @@
 		14CD5630AF43F9C52204A65C = {
 			isa = PBXGroup;
 			children = (
-				9E1C803D27F0439CBA7A2389 /* AirPrintRelay.icon */,
+				9E1C803D27F0439CBA7A2389 /* AppIcon.icon */,
 				A07F315CBD85963334985171 /* AirPrintRelay */,
 				5EFB8EEE99146B77EA730E5A /* Products */,
 			);
@@ -173,7 +173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F09F018B2A143D596929AC7 /* AirPrintRelay.icon in Resources */,
+				4F09F018B2A143D596929AC7 /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +272,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2026081112;
+				CURRENT_PROJECT_VERSION = 2026081113;
 				DEVELOPMENT_TEAM = FHXMYC956U;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -283,7 +283,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.01;
+				MARKETING_VERSION = 0.1.02;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maxhewett.AirPrint-Relay";
 				PRODUCT_NAME = "AirPrint Relay";
 				SDKROOT = macosx;
@@ -353,7 +353,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2026081112;
+				CURRENT_PROJECT_VERSION = 2026081113;
 				DEVELOPMENT_TEAM = FHXMYC956U;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -364,7 +364,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.01;
+				MARKETING_VERSION = 0.1.02;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maxhewett.AirPrint-Relay";
 				PRODUCT_NAME = "AirPrint Relay";
 				SDKROOT = macosx;
