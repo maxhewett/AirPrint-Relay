@@ -42,6 +42,7 @@ final class AppModel: ObservableObject {
     let relayServer = IPPRelayServer()
     let advertiser = AirPrintAdvertiser()
     let logs = AppLogStore.shared
+    let updater = AppUpdater()
 
     private lazy var menuBarController = MenuBarController(model: self)
     private weak var mainWindow: NSWindow?

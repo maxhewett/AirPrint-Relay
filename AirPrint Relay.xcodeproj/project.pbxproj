@@ -20,6 +20,8 @@
 		8F78B919D849E9341D90E009 /* AirPrintProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5335A3930FEE78CAC46F1362 /* AirPrintProfile.swift */; };
 		90E005095C40B9C2B7519358 /* AirPrintAdvertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D98CB9049390152A687DA68 /* AirPrintAdvertiser.swift */; };
 		B1CF540EBCE4B6461F79EF8E /* CUPSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2D34790B9210BFA7EF940D /* CUPSService.swift */; };
+		B2C3D4E5F60718293A4B5C6D /* AppUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B5C /* AppUpdater.swift */; };
+		D4E5F60718293A4B5C6D7E8F /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = F60718293A4B5C6D7E8F9A0B /* Sparkle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +39,20 @@
 		734030235EFBB902CAD6CCCD /* AirPrint Relay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AirPrint Relay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AFB105ECFA428053E989E05 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9E1C803D27F0439CBA7A2389 /* AirPrintRelay.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AirPrintRelay.icon; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B5C /* AppUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdater.swift; sourceTree = "<group>"; };
 		D1F4BBA013C34BF2B901378C /* IPPMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPPMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3D4E5F60718293A4B5C6D7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4E5F60718293A4B5C6D7E8F /* Sparkle in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		14CD5630AF43F9C52204A65C = {
@@ -57,6 +71,7 @@
 				5335A3930FEE78CAC46F1362 /* AirPrintProfile.swift */,
 				611CEB9A4234A04AA1771F71 /* AppLogStore.swift */,
 				67E6B038DAC1999F3BD6011C /* AppModel.swift */,
+				A1B2C3D4E5F60718293A4B5C /* AppUpdater.swift */,
 				3C41837F65964DFB8234932B /* CUPSJobSubmitter.swift */,
 				5A2D34790B9210BFA7EF940D /* CUPSService.swift */,
 				D1F4BBA013C34BF2B901378C /* IPPMessage.swift */,
@@ -103,6 +118,7 @@
 			buildPhases = (
 				FD2FBB13C34F5F66AB20ABF0 /* Sources */,
 				98492AF628674526A15B84FC /* Resources */,
+				C3D4E5F60718293A4B5C6D7E /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -110,6 +126,7 @@
 			);
 			name = "AirPrint Relay";
 			packageProductDependencies = (
+				F60718293A4B5C6D7E8F9A0B /* Sparkle */,
 			);
 			productName = "AirPrint Relay";
 			productReference = 734030235EFBB902CAD6CCCD /* AirPrint Relay.app */;
@@ -138,6 +155,9 @@
 			);
 			mainGroup = 14CD5630AF43F9C52204A65C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E5F60718293A4B5C6D7E8F9 /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5EFB8EEE99146B77EA730E5A /* Products */;
 			projectDirPath = "";
@@ -169,6 +189,7 @@
 				119B1B9BB6F24B57B39B1934 /* AppLogStore.swift in Sources */,
 				6DA92C4E5E87C45B39DDFB54 /* AirPrintRelayApp.swift in Sources */,
 				2A141D15BA21606E480DCE6E /* AppModel.swift in Sources */,
+				B2C3D4E5F60718293A4B5C6D /* AppUpdater.swift in Sources */,
 				B1CF540EBCE4B6461F79EF8E /* CUPSService.swift in Sources */,
 				51FC81F450BEDEF24A5B21B4 /* ContentView.swift in Sources */,
 				20A839EB615C4B8E9BB1743A /* CUPSJobSubmitter.swift in Sources */,
@@ -248,20 +269,21 @@
 		270E8C6539C50948A6603577 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AirPrintRelay;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2026081112;
 				DEVELOPMENT_TEAM = FHXMYC956U;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = AirPrintRelay/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "AirPrint Relay";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maxhewett.AirPrint-Relay";
 				PRODUCT_NAME = "AirPrint Relay";
 				SDKROOT = macosx;
@@ -328,20 +350,21 @@
 		EEEAFCB064B86241845624D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AirPrintRelay;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2026081112;
 				DEVELOPMENT_TEAM = FHXMYC956U;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = AirPrintRelay/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "AirPrint Relay";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maxhewett.AirPrint-Relay";
 				PRODUCT_NAME = "AirPrint Relay";
 				SDKROOT = macosx;
@@ -371,6 +394,25 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E5F60718293A4B5C6D7E8F9 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = exactVersion;
+				version = 2.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F60718293A4B5C6D7E8F9A0B /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5F60718293A4B5C6D7E8F9 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7D062BE0FB2D3BC2834E8941 /* Project object */;
 }

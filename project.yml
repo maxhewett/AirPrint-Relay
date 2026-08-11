@@ -3,6 +3,10 @@ options:
   bundleIdPrefix: com.max
   deploymentTarget:
     macOS: "13.0"
+packages:
+  Sparkle:
+    url: https://github.com/sparkle-project/Sparkle
+    exactVersion: 2.8.0
 targets:
   AirPrint Relay:
     type: application
@@ -11,6 +15,9 @@ targets:
       - path: AirPrintRelay
       - path: AirPrintRelay.icon
         buildPhase: resources
+    dependencies:
+      - package: Sparkle
+        product: Sparkle
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.maxhewett.AirPrint-Relay

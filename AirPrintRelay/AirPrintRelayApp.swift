@@ -14,6 +14,11 @@ struct AirPrintRelayApp: App {
         }
         .commands {
             CommandGroup(after: .appInfo) {
+                Button("Check for Updates...") {
+                    appModel.updater.checkForUpdates()
+                }
+                .disabled(!appModel.updater.canCheckForUpdates)
+
                 Button("Settings...") {
                     appModel.showSettings()
                 }

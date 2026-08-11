@@ -4,4 +4,6 @@ DerivedData/
 *.xcuserstate
 *.xcworkspace/xcuserdata/
 *.xcodeproj/xcuserdata/
+release-artifacts/*
+!release-artifacts/.gitkeep
 *.xcodeproj/project.xcworkspace/xcuserdata/

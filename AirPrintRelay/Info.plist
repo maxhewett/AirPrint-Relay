@@ -32,5 +32,11 @@
 	<string>AirPrint Relay advertises selected Mac printer queues on your local network so iPhone and iPad can discover them.</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
+	<key>SUFeedURL</key>
+	<string>https://maxhewett.github.io/AirPrint-Relay/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>rxaJsfCpTKtpqRubSfkJwKnztT5S8RHsdAueuT+jKck=</string>
 </dict>
 </plist>

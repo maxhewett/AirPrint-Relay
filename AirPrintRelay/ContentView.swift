@@ -186,6 +186,10 @@ private struct SettingsPanelView: View {
                             .foregroundStyle(.secondary)
                     }
 
+                    SettingsSection(title: "Software Updates", systemImage: "arrow.down.circle") {
+                        UpdateSettingsView(updater: model.updater)
+                    }
+
                     SettingsSection(title: "iOS Image Printing", systemImage: "photo.on.rectangle") {
                         HStack(alignment: .top, spacing: 22) {
                             VStack(alignment: .center, spacing: 12) {
@@ -262,6 +266,76 @@ private struct SettingsSection<Content: View>: View {
                     .stroke(.quaternary, lineWidth: 1)
             )
         }
+    }
+}
+
+private struct UpdateSettingsView: View {
+    @ObservedObject var updater: AppUpdater
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Picker("Channel", selection: Binding(
+                get: { updater.selectedChannel },
+                set: { updater.setUpdateChannel($0) }
+            )) {
+                ForEach(AppUpdater.UpdateChannel.allCases) { channel in
+                    Text(channel.label).tag(channel)
+                }
+            }
+            .pickerStyle(.segmented)
+
+            Toggle("Check for updates automatically", isOn: Binding(
+                get: { updater.automaticallyChecksForUpdates },
+                set: { updater.setAutomaticallyChecksForUpdates($0) }
+            ))
+            .disabled(!updater.isConfigured)
+
+            Toggle("Download updates automatically", isOn: Binding(
+                get: { updater.automaticallyDownloadsUpdates },
+                set: { updater.setAutomaticallyDownloadsUpdates($0) }
+            ))
+            .disabled(!updater.isConfigured)
+
+            HStack {
+                Button {
+                    updater.checkForUpdates()
+                } label: {
+                    Label("Check for Updates", systemImage: "arrow.clockwise")
+                }
+                .disabled(!updater.canCheckForUpdates)
+
+                if let releaseNotesURL = updater.releaseNotesURL {
+                    Button {
+                        NSWorkspace.shared.open(releaseNotesURL)
+                    } label: {
+                        Label("Release Notes", systemImage: "doc.text")
+                    }
+                    .disabled(!updater.isConfigured)
+                }
+            }
+            .buttonStyle(.bordered)
+
+            Text(updaterStatusText)
+                .font(.caption)
+                .foregroundStyle(updater.isConfigured ? Color.secondary : Color.orange)
+                .textSelection(.enabled)
+        }
+    }
+
+    private var updaterStatusText: String {
+        if updater.isConfigured {
+            return "Sparkle feed: \(updater.feedURLString)"
+        }
+
+        if updater.feedURLString.isEmpty {
+            return "Sparkle is not configured: SUFeedURL is missing."
+        }
+
+        if !updater.hasPublicKey {
+            return "Sparkle feed is set to \(updater.feedURLString), but SUPublicEDKey still needs the ShipHook/Sparkle public key."
+        }
+
+        return "Sparkle is not configured."
     }
 }
 
@@ -475,7 +549,7 @@ private struct PrinterRowView: View {
                 VStack(alignment: .leading, spacing: 3) {
                     Text(printer.displayName)
                         .font(.headline)
-                    Text("\(printer.makeAndModel) - \(printer.stateLabel)")
+                    Text("\(printer.makeAndModel) - \(printer.backendKind.label) - \(printer.stateLabel)")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
@@ -533,14 +607,14 @@ private struct PrinterRowView: View {
                         DetailLabel(title: "Formats", value: model.advertisementProfile.documentFormats.joined(separator: ", "))
                     }
                     GridRow {
+                        DetailLabel(title: "Backend", value: printer.backendKind.label)
                         DetailLabel(title: "Device", value: printer.deviceURI)
-                        DetailLabel(title: "Color", value: printer.supportsColor ? "Yes" : "No")
-                        DetailLabel(title: "Duplex", value: printer.supportsDuplex ? "Yes" : "No")
+                        DetailLabel(title: "CUPS Sharing", value: printer.isShared ? "On" : "Off")
                     }
                     GridRow {
+                        DetailLabel(title: "Color", value: printer.supportsColor ? "Yes" : "No")
+                        DetailLabel(title: "Duplex", value: printer.supportsDuplex ? "Yes" : "No")
                         DetailLabel(title: "Driver Icon", value: printer.iconPath.isEmpty ? "Fallback" : "Driver supplied")
-                        DetailLabel(title: "CUPS Sharing", value: printer.isShared ? "On" : "Off")
-                        DetailLabel(title: "Accepting Jobs", value: printer.acceptsJobs ? "Yes" : "No")
                     }
                 }
                 .font(.callout)
