@@ -46,10 +46,12 @@ final class AirPrintAdvertiser: ObservableObject {
                     case .success(let serviceName):
                         self?.statuses[printer.name] = AdvertisementStatus(
                             isAdvertising: true,
-                            message: "Advertising as \(serviceName)"
+                            message: "Advertising"
                         )
                         AppLogStore.shared.info("Bonjour registered \(printer.name) as \(serviceName).")
                     case .failure(let error):
+                        self?.registrations[printer.name]?.invalidate()
+                        self?.registrations[printer.name] = nil
                         self?.statuses[printer.name] = AdvertisementStatus(
                             isAdvertising: false,
                             message: error.localizedDescription
@@ -93,7 +95,7 @@ private final class BonjourRegistration {
         let error: DNSServiceErrorType = txtData.withUnsafeBytes { buffer in
             DNSServiceRegister(
                 &ref,
-                DNSServiceFlags(0),
+                DNSServiceFlags(kDNSServiceFlagsNoAutoRename),
                 UInt32(0),
                 settings.serviceName(for: printer),
                 "_ipp._tcp,_universal",
@@ -163,6 +165,9 @@ private enum BonjourError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .registrationFailed(let code):
+            if code == kDNSServiceErr_NameConflict {
+                return "Name already in use on this network."
+            }
             return "Bonjour registration failed with DNS-SD error \(code)."
         }
     }

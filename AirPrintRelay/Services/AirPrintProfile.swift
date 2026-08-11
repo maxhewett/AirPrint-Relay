@@ -49,7 +49,7 @@ struct PrinterAdvertisementSettings: Codable, Equatable {
     }
 
     func serviceName(for printer: Printer) -> String {
-        "\(displayName(for: printer)) @ \(Host.current().localizedName ?? Host.current().name ?? "Mac")"
+        truncatedServiceName(displayName(for: printer))
     }
 
     private func sanitized(_ value: String) -> String {
@@ -57,6 +57,18 @@ struct PrinterAdvertisementSettings: Codable, Equatable {
             .replacingOccurrences(of: "\n", with: " ")
             .replacingOccurrences(of: "\r", with: " ")
             .trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private func truncatedServiceName(_ value: String) -> String {
+        var result = ""
+        var byteCount = 0
+        for character in sanitized(value) {
+            let characterBytes = String(character).utf8.count
+            guard byteCount + characterBytes <= 63 else { break }
+            result.append(character)
+            byteCount += characterBytes
+        }
+        return result.isEmpty ? sanitized(value) : result
     }
 }
 

@@ -540,6 +540,8 @@ private struct PrinterRowView: View {
     let printer: Printer
     @State private var isEditingListing = false
     @State private var isShowingDetails = false
+    @State private var draftListing = PrinterAdvertisementSettings()
+    @State private var listingError: String?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
@@ -549,7 +551,7 @@ private struct PrinterRowView: View {
                 VStack(alignment: .leading, spacing: 3) {
                     Text(printer.displayName)
                         .font(.headline)
-                    Text("\(printer.makeAndModel) - \(printer.backendKind.label) - \(printer.stateLabel)")
+                    Text(subtitle)
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
@@ -578,21 +580,41 @@ private struct PrinterRowView: View {
                     Spacer()
 
                     Button {
-                        isEditingListing.toggle()
+                        if isEditingListing {
+                            commitListing()
+                        } else {
+                            beginEditingListing()
+                        }
                     } label: {
                         Label(isEditingListing ? "Done" : "Edit", systemImage: isEditingListing ? "checkmark" : "pencil")
                     }
                     .buttonStyle(.borderless)
                     .controlSize(.small)
+
+                    if isEditingListing {
+                        Button {
+                            cancelEditingListing()
+                        } label: {
+                            Label("Cancel", systemImage: "xmark")
+                        }
+                        .buttonStyle(.borderless)
+                        .controlSize(.small)
+                    }
                 }
 
                 if isEditingListing {
                     Grid(alignment: .leading, horizontalSpacing: 10, verticalSpacing: 8) {
                         GridRow {
-                            ListingField(title: "Name", text: listingBinding(\.name))
-                            ListingField(title: "Location", text: listingBinding(\.location))
-                            ListingField(title: "Model", text: listingBinding(\.model))
+                            ListingField(title: "Appears As", text: $draftListing.name, placeholder: printer.displayName)
+                            ListingField(title: "Location", text: $draftListing.location, placeholder: printer.location.isEmpty ? "Optional" : printer.location)
+                            ListingField(title: "Model", text: $draftListing.model, placeholder: printer.makeAndModel)
                         }
+                    }
+
+                    if let listingError {
+                        Label(listingError, systemImage: "exclamationmark.triangle")
+                            .font(.caption)
+                            .foregroundStyle(.orange)
                     }
                 } else {
                     ListingSummaryView(printer: printer, settings: model.advertisementSettings(for: printer))
@@ -648,6 +670,18 @@ private struct PrinterRowView: View {
         printer.acceptsJobs
     }
 
+    private var subtitle: String {
+        var parts: [String] = []
+        if !printer.makeAndModel.isEmpty {
+            parts.append(printer.makeAndModel)
+        }
+        if printer.backendKind != .unknown {
+            parts.append(printer.backendKind.label)
+        }
+        parts.append(printer.stateLabel)
+        return parts.joined(separator: " - ")
+    }
+
     private var status: AdvertisementStatus {
         if let status = model.advertiser.statuses[printer.name] {
             return status
@@ -658,14 +692,31 @@ private struct PrinterRowView: View {
         return AdvertisementStatus(isAdvertising: false, message: "Ready")
     }
 
-    private func listingBinding(_ keyPath: WritableKeyPath<PrinterAdvertisementSettings, String>) -> Binding<String> {
-        Binding {
-            model.advertisementSettings(for: printer)[keyPath: keyPath]
-        } set: { value in
-            var settings = model.advertisementSettings(for: printer)
-            settings[keyPath: keyPath] = value
-            model.setAdvertisementSettings(settings, for: printer)
+    private func beginEditingListing() {
+        draftListing = model.advertisementSettings(for: printer)
+        listingError = nil
+        isEditingListing = true
+    }
+
+    private func cancelEditingListing() {
+        draftListing = model.advertisementSettings(for: printer)
+        listingError = nil
+        isEditingListing = false
+    }
+
+    private func commitListing() {
+        let proposedName = draftListing.serviceName(for: printer).lowercased()
+        if let duplicate = model.printers.first(where: { other in
+            guard other.name != printer.name, model.enabledPrinterNames.contains(other.name) else { return false }
+            return model.advertisementSettings(for: other).serviceName(for: other).lowercased() == proposedName
+        }) {
+            listingError = "\(model.advertisementSettings(for: duplicate).serviceName(for: duplicate)) is already being advertised by \(duplicate.displayName)."
+            return
         }
+
+        model.setAdvertisementSettings(draftListing, for: printer)
+        listingError = nil
+        isEditingListing = false
     }
 }
 
@@ -755,7 +806,7 @@ private struct ListingSummaryView: View {
     var body: some View {
         Grid(alignment: .leading, horizontalSpacing: 18, verticalSpacing: 6) {
             GridRow {
-                DetailLabel(title: "Name", value: settings.displayName(for: printer))
+                DetailLabel(title: "Appears As", value: settings.serviceName(for: printer))
                 DetailLabel(title: "Location", value: settings.location(for: printer))
                 DetailLabel(title: "Model", value: settings.model(for: printer))
             }
@@ -767,13 +818,14 @@ private struct ListingSummaryView: View {
 private struct ListingField: View {
     let title: String
     @Binding var text: String
+    var placeholder = ""
 
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
             Text(title.uppercased())
                 .font(.caption2.weight(.semibold))
                 .foregroundStyle(.tertiary)
-            TextField(title, text: $text)
+            TextField(placeholder.isEmpty ? title : placeholder, text: $text)
                 .textFieldStyle(.roundedBorder)
                 .frame(minWidth: 120, maxWidth: 220)
         }
